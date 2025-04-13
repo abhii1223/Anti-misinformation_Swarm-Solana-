@@ -1,0 +1,8 @@
+{
+    "openai": "YOUR_OPENAI_API_KEY",
+    "perplexity": "YOUR_PERPLEXITY_API_KEY",
+    "google": {
+        "api_key": "YOUR_GOOGLE_API_KEY",
+        "cse_id": "YOUR_GOOGLE_CSE_ID"
+    }
+} 

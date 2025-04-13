@@ -1,0 +1,71 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Next.js
+.next/
+out/
+
+# Production
+build
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+**/venv/
+**/__pycache__/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Misc
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+# Exclude large files
+*.dylib
+*.dll
+*.so.*
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.pb
+*.safetensors
+
+# API keys
+api_keys.json
+
+# Solana
+.config/solana/id.json
+*.keypair.json 
