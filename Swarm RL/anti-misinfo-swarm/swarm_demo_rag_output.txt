@@ -1,0 +1,30 @@
+2025-04-12 19:13:16,823 - swarm_demo - INFO - Loaded API keys from api_keys.json
+2025-04-12 19:13:16,983 - faiss.loader - INFO - Loading faiss.
+2025-04-12 19:13:17,021 - faiss.loader - INFO - Successfully loaded faiss.
+2025-04-12 19:13:17,025 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-04-12 19:13:22,206 - datasets - INFO - PyTorch version 2.6.0 available.
+2025-04-12 19:13:22,762 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-04-12 19:13:22,762 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-12 19:13:27,372 - rag_retriever - INFO - Loaded FAISS index with 5 entries
+2025-04-12 19:13:27,373 - swarm_demo - INFO - RAG enabled for enhanced analysis
+2025-04-12 19:13:28,084 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+2025-04-12 19:13:28,085 - perplexity_model - INFO - Initialized Perplexity model: sonar
+2025-04-12 19:13:28,108 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+2025-04-12 19:13:28,108 - perplexity_model - INFO - Initialized Perplexity model: sonar
+
+================================================================================
+🧠 SWARM RL ANTI-MISINFORMATION SYSTEM 🧠
+================================================================================
+
+This demo showcases a decentralized swarm of AI models that collaborate
+to detect misinformation through three-stage reinforcement learning:
+
+1. Analysis: Independent fact-checking by multiple peers
+2. Critique: Cross-evaluation of analyses for flaws and insights
+3. Consensus: Formation of a unified verdict with confidence score
+
+Each peer earns rewards based on the quality of their contributions.
+
+Using local knowledge base (RAG) for context retrieval
+
+Enter a claim to analyze (or 'exit' to quit): 

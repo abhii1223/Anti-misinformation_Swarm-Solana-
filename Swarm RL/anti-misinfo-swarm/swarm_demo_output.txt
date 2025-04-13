@@ -1,0 +1,191 @@
+2025-04-12 19:08:03,343 - swarm_demo - INFO - Loaded API keys from api_keys.json
+2025-04-12 19:08:03,897 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+2025-04-12 19:08:03,953 - perplexity_model - INFO - Initialized Perplexity model: sonar
+2025-04-12 19:08:03,976 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+
+================================================================================
+🧠 SWARM RL ANTI-MISINFORMATION SYSTEM 🧠
+================================================================================
+
+This demo showcases a decentralized swarm of AI models that collaborate
+to detect misinformation through three-stage reinforcement learning:
+
+1. Analysis: Independent fact-checking by multiple peers
+2. Critique: Cross-evaluation of analyses for flaws and insights
+3. Consensus: Formation of a unified verdict with confidence score
+
+Each peer earns rewards based on the quality of their contributions.
+
+No context provider enabled - analyses will be based solely on model knowledge
+
+Enter a claim to analyze (or 'exit' to quit): 
+Analyzing claim: The Eiffel Tower is located in Rome, Italy.
+
+==============================
+STAGE 1: INDEPENDENT ANALYSIS
+==============================
+
+Peer Falcon-9312 (openai) analyzing...
+2025-04-12 19:08:09,513 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+[PEER: Falcon-9312 (OPENAI)]
+[REWARD: 0.40]
+verdict: MISINFORMATION
+confidence: 1.0
+reasoning: The claim that the Eiffel Tower is located in Rome, Italy, is factually incorrect. The Eiffel Tower is a famous landmark located in Paris, France. It was constructed for the 1889 World's Fair and has since become an iconic symbol of Paris and France as a whole. Rome, on the other hand, is the capital city of Italy and is known for its own historical landmarks such as the Colosseum and the Vatican City. There is no connection between the Eiffel Tower and Rome in terms of location.
+evidence: 
+  [1] The Eiffel Tower is located in Paris, France, as confirmed by numerous reputable sources including travel guides, encyclopedias, and official tourism websites.
+  [2] Rome is the capital city of Italy, known for landmarks like the Colosseum and the Vatican, not the Eiffel Tower.
+  [3] The Eiffel Tower was constructed for the 1889 Exposition Universelle (World's Fair) held in Paris, France.
+limitations: 
+  [1] The analysis assumes the claim refers to the well-known Eiffel Tower in Paris and not any potential replicas or similarly named structures elsewhere.
+
+
+Peer Hawk-7866 (perplexity) analyzing...
+
+[PEER: Hawk-7866 (PERPLEXITY)]
+[REWARD: 0.33]
+verdict: MISINFORMATION
+confidence: 1.0
+reasoning: The claim that the Eiffel Tower is located in Rome, Italy, is incorrect. The Eiffel Tower is actually located in Paris, France. It is situated on the Champ de Mars in the 7th arrondissement of Paris, and its coordinates are 48.858093, 2.294694. This information is widely documented and verified by multiple reliable sources.
+evidence: 
+  [1] The Eiffel Tower is located on the Champ de Mars at 5 Avenue Anatole France in the 7th arrondissement of Paris, France [2][3].
+  [2] The Eiffel Tower's coordinates are 48°51′29.6″N 2°17′40.2″E, which corresponds to Paris, France [1][4][5].
+limitations: The analysis is based on available geographical and historical data. No specific information about Rome, Italy, was needed to refute the claim, as the Eiffel Tower's location in Paris is well-established.
+
+
+Peer Wolf-8612 (openai) analyzing...
+2025-04-12 19:08:20,751 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+[PEER: Wolf-8612 (OPENAI)]
+[REWARD: 0.40]
+verdict: MISINFORMATION
+confidence: 1.0
+reasoning: The claim that the Eiffel Tower is located in Rome, Italy, is factually incorrect. The Eiffel Tower is a famous landmark located in Paris, France. It was designed by Gustave Eiffel and completed in 1889 for the Exposition Universelle (World's Fair) held in Paris. Rome, on the other hand, is the capital city of Italy and is known for its own historical landmarks such as the Colosseum and the Vatican City. The Eiffel Tower has no connection to Rome, Italy, in terms of location.
+evidence: 
+  [1] The Eiffel Tower is a well-documented landmark in Paris, France, as per numerous historical and geographical sources.
+  [2] Official tourism websites and encyclopedias consistently list the Eiffel Tower as a Parisian monument.
+  [3] Maps and geographical data confirm the Eiffel Tower's location in Paris, France.
+limitations: 
+  [1] The analysis assumes the claim is referring to the well-known Eiffel Tower in Paris and not a hypothetical or fictional structure with the same name in Rome.
+
+
+==============================
+STAGE 2: CROSS-CRITIQUE
+==============================
+
+Peer Falcon-9312 critiquing Hawk-7866's analysis...
+2025-04-12 19:08:25,795 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+[PEER: Falcon-9312 (OPENAI)]
+[REWARD: 0.12]
+critique_points: 
+  [1] The analysis correctly identifies the claim as misinformation, but it does not address why such a claim might arise or be believed by some individuals.
+  [2] The analysis does not consider the possibility of a typographical error or confusion with another landmark, which could provide context for the claim.
+  [3] The 'reward' section is unclear in its purpose and does not seem relevant to the analysis of the claim.
+missing_considerations: 
+  [1] The analysis does not explore the potential reasons behind the claim, such as common misconceptions or errors in translation.
+  [2] There is no discussion of the impact of such misinformation or how it might affect public understanding or perception.
+accuracy_score: 0.9
+bias_assessment: The analysis appears to be free from bias as it relies on factual information about the Eiffel Tower's location. However, it lacks a broader context that might explain why the claim was made.
+improvement_suggestions: 
+  [1] Include a section that explores possible reasons for the claim's existence, such as common misconceptions or errors.
+  [2] Clarify the purpose of the 'reward' section or remove it if it does not contribute to the analysis.
+  [3] Discuss the potential impact of such misinformation on public perception or understanding.
+target_peer: Hawk-7866
+
+
+Peer Hawk-7866 critiquing Falcon-9312's analysis...
+
+[PEER: Hawk-7866 (PERPLEXITY)]
+[REWARD: 0.12]
+critique_points: 
+  [1] The analysis does not provide specific examples of 'numerous reputable sources' to support its claims about the Eiffel Tower's location.
+  [2] It assumes that the claim refers to the original Eiffel Tower without considering the possibility of replicas or similarly named structures in Rome, which is acknowledged but not thoroughly explored.
+  [3] The analysis does not address potential linguistic or cultural misunderstandings that might lead to the claim being made.
+missing_considerations: 
+  [1] The possibility of replicas or models of the Eiffel Tower in Rome or other parts of Italy that could be confused with the original.
+  [2] Cultural or historical contexts that might lead to such a claim being made, such as confusion with other landmarks or historical events.
+  [3] The role of misinformation or disinformation in spreading such claims.
+accuracy_score: 0.8
+bias_assessment: The analysis appears to be factually correct but lacks depth in addressing potential complexities or nuances. There is no apparent bias towards or against any particular viewpoint, but the analysis could benefit from a more comprehensive approach.
+improvement_suggestions: 
+  [1] Include specific references to reputable sources to strengthen the evidence.
+  [2] Explore the possibility of replicas or similarly named structures that could be the source of confusion.
+  [3] Consider cultural or historical contexts that might lead to such misinformation.
+  [4] Provide a more detailed explanation of how misinformation or disinformation might contribute to the spread of such claims.
+target_peer: Falcon-9312
+
+
+Peer Wolf-8612 critiquing Hawk-7866's analysis...
+2025-04-12 19:08:40,006 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+[PEER: Wolf-8612 (OPENAI)]
+[REWARD: 0.12]
+critique_points: 
+  [1] The analysis correctly identifies the claim as misinformation, but it does not address why such a claim might arise or be believed by some individuals.
+  [2] The analysis does not consider the possibility of a typographical error or misunderstanding that could lead to such a claim, which could provide additional context.
+  [3] The 'reward' section is unclear in its purpose and does not seem relevant to the analysis of the claim.
+missing_considerations: 
+  [1] The analysis does not explore the potential reasons or sources that might have led to the creation or spread of this misinformation.
+  [2] There is no discussion of the impact or significance of the misinformation, such as whether it is likely to cause confusion or if it is a common misconception.
+accuracy_score: 0.9
+bias_assessment: The analysis appears to be free from bias, as it relies on factual information about the location of the Eiffel Tower. However, it could be seen as lacking in depth due to not considering the broader context or reasons behind the misinformation.
+improvement_suggestions: 
+  [1] Include a section that explores why such a claim might have been made, such as common misconceptions or typographical errors.
+  [2] Discuss the potential impact of the misinformation to provide a more comprehensive analysis.
+  [3] Clarify the purpose of the 'reward' section or remove it if it is not relevant to the analysis.
+target_peer: Hawk-7866
+
+
+==============================
+STAGE 3: CONSENSUS FORMATION
+==============================
+
+Peer Falcon-9312 forming consensus...
+2025-04-12 19:08:45,912 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+[PEER: Falcon-9312 (OPENAI)]
+[REWARD: 0.18]
+final_verdict: MISINFORMATION
+confidence: 1.0
+key_rationale: 
+  [1] The Eiffel Tower is a well-documented landmark located in Paris, France, not Rome, Italy. This is supported by numerous reputable sources including travel guides, encyclopedias, and official tourism websites.
+  [2] The Eiffel Tower was constructed for the 1889 Exposition Universelle (World's Fair) held in Paris, and its location is widely recognized and verified by geographical data.
+  [3] Rome, Italy, is known for its own distinct historical landmarks such as the Colosseum and the Vatican City, with no connection to the Eiffel Tower.
+evidence_sources: 
+  [1] Official tourism websites and encyclopedias consistently list the Eiffel Tower as a Parisian monument.
+  [2] Geographical data and maps confirm the Eiffel Tower's location in Paris, France, with specific coordinates provided.
+  [3] Historical records of the 1889 Exposition Universelle (World's Fair) in Paris, where the Eiffel Tower was constructed.
+disagreements: 
+  [1] While all analyses agree on the misinformation verdict, critiques suggest a lack of exploration into why such a claim might arise, such as potential replicas or cultural misunderstandings.
+limitations: 
+  [1] The analyses did not explore potential reasons behind the claim, such as typographical errors, replicas, or cultural misunderstandings, which could provide additional context.
+  [2] There is no discussion of the impact or significance of the misinformation, such as whether it is likely to cause confusion or if it is a common misconception.
+
+
+==================================================
+📊 SWARM VERDICT:
+❌ This claim is likely MISINFORMATION (Confidence: 1.00)
+==================================================
+
+==================================================
+🏆 REWARDS LEADERBOARD 🏆
+==================================================
+
+PEER            ANALYSIS   CRITIQUE   CONSENSUS  TOTAL     
+------------------------------------------------------------
+Falcon-9312     0.40       0.12       0.18       0.70      
+Wolf-8612       0.40       0.12       0.00       0.52      
+Hawk-7866       0.33       0.12       0.00       0.45      
+
+Enter a claim to analyze (or 'exit' to quit): 
+==================================================
+🏆 REWARDS LEADERBOARD 🏆
+==================================================
+
+PEER            ANALYSIS   CRITIQUE   CONSENSUS  TOTAL     
+------------------------------------------------------------
+Falcon-9312     0.40       0.12       0.18       0.70      
+Wolf-8612       0.40       0.12       0.00       0.52      
+Hawk-7866       0.33       0.12       0.00       0.45      

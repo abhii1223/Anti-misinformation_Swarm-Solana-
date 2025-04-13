@@ -3,6 +3,6 @@
     "perplexity": "YOUR_PERPLEXITY_API_KEY",
     "google": {
         "api_key": "YOUR_GOOGLE_API_KEY",
-        "cse_id": "YOUR_GOOGLE_CSE_ID"
+        "cse_id": "YOUR_GOOGLE_CUSTOM_SEARCH_ENGINE_ID"
     }
 } 

@@ -1,0 +1,58 @@
+# Model configurations
+openai_model:
+  model_name: "gpt-4o"
+  max_tokens: 1024
+  temperature: 0.1
+
+perplexity_model:
+  model_name: "sonar"
+  max_tokens: 1024
+  temperature: 0.1
+
+# Training parameters
+training:
+  max_steps: 50
+  per_device_batch_size: 1
+  gradient_accumulation_steps: 1
+  learning_rate: 5.0e-7
+  warmup_ratio: 0.03
+  seed: 42
+
+# Swarm parameters
+swarm:
+  initial_peers: []
+  host_maddr: "/ip4/0.0.0.0/tcp/38331"
+  max_rounds: 100
+  dht_prefix: "misinfo_detection"
+
+# Stage configurations
+stages:
+  stage1_analysis:
+    reward_weight: 0.4
+    prompt_template: "Analyze the following claim for misinformation: {claim}"
+    reward_criterion: ["factual_grounding", "evidence_use", "clear_explanation"]
+  
+  stage2_critique:
+    reward_weight: 0.3
+    prompt_template: "Review the following analysis of a claim. Critique it for accuracy: {analysis}"
+    reward_criterion: ["insight", "false_positive_detection", "false_negative_detection"]
+  
+  stage3_consensus:
+    reward_weight: 0.3
+    prompt_template: "Based on these analyses and critiques, provide a final verdict on the claim: {analyses_and_critiques}"
+    reward_criterion: ["coherence", "source_backed_justification", "group_confidence"]
+
+# RAG configuration
+rag:
+  enabled: true
+  embedding_model: "sentence-transformers/all-mpnet-base-v2"
+  retrieval_top_k: 5
+  kb_index_type: "faiss"
+  kb_path: "knowledge_base/index"
+
+# Logging configuration
+logging:
+  log_level: "INFO"
+  report_to: ["tensorboard"]
+  logging_steps: 5
+  save_steps: 25 

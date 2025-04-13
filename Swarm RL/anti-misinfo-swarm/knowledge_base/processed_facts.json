@@ -1,0 +1,70 @@
+[
+  {
+    "text": "Claim: COVID-19 vaccines can alter your DNA.\nVerdict: False\nExplanation: COVID-19 vaccines do not alter or interact with your DNA. mRNA vaccines work by instructing cells to make a protein that triggers an immune response. The mRNA does not enter the cell nucleus where DNA is kept.",
+    "metadata": {
+      "claim": "COVID-19 vaccines can alter your DNA.",
+      "verdict": "False",
+      "explanation": "COVID-19 vaccines do not alter or interact with your DNA. mRNA vaccines work by instructing cells to make a protein that triggers an immune response. The mRNA does not enter the cell nucleus where DNA is kept.",
+      "sources": [
+        "CDC",
+        "WHO",
+        "NIH"
+      ],
+      "category": "health"
+    }
+  },
+  {
+    "text": "Claim: 5G mobile networks spread COVID-19.\nVerdict: False\nExplanation: Viruses cannot travel on radio waves/mobile networks. COVID-19 is spreading in many countries that do not have 5G mobile networks.",
+    "metadata": {
+      "claim": "5G mobile networks spread COVID-19.",
+      "verdict": "False",
+      "explanation": "Viruses cannot travel on radio waves/mobile networks. COVID-19 is spreading in many countries that do not have 5G mobile networks.",
+      "sources": [
+        "WHO",
+        "Full Fact"
+      ],
+      "category": "technology"
+    }
+  },
+  {
+    "text": "Claim: Drinking bleach can cure coronavirus.\nVerdict: False\nExplanation: Drinking bleach is extremely dangerous and can cause severe vomiting, diarrhea, and life-threatening low blood pressure. It does not cure any diseases.",
+    "metadata": {
+      "claim": "Drinking bleach can cure coronavirus.",
+      "verdict": "False",
+      "explanation": "Drinking bleach is extremely dangerous and can cause severe vomiting, diarrhea, and life-threatening low blood pressure. It does not cure any diseases.",
+      "sources": [
+        "CDC",
+        "FDA"
+      ],
+      "category": "health"
+    }
+  },
+  {
+    "text": "Claim: Earth is flat, not round.\nVerdict: False\nExplanation: Scientific evidence from multiple fields including physics, astronomy, and geology all confirm that the Earth is roughly spherical.",
+    "metadata": {
+      "claim": "Earth is flat, not round.",
+      "verdict": "False",
+      "explanation": "Scientific evidence from multiple fields including physics, astronomy, and geology all confirm that the Earth is roughly spherical.",
+      "sources": [
+        "NASA",
+        "National Geographic",
+        "Scientific studies"
+      ],
+      "category": "science"
+    }
+  },
+  {
+    "text": "Claim: Climate change is not influenced by human activities.\nVerdict: False\nExplanation: There is overwhelming scientific consensus that climate change is real and primarily caused by human activities, particularly the burning of fossil fuels.",
+    "metadata": {
+      "claim": "Climate change is not influenced by human activities.",
+      "verdict": "False",
+      "explanation": "There is overwhelming scientific consensus that climate change is real and primarily caused by human activities, particularly the burning of fossil fuels.",
+      "sources": [
+        "IPCC",
+        "NASA",
+        "NOAA"
+      ],
+      "category": "environment"
+    }
+  }
+]

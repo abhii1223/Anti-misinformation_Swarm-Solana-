@@ -1,79 +1,102 @@
 # Installation Guide
 
+This document provides detailed installation and setup instructions for the Anti-Misinformation Swarm RL on Solana project.
+
 ## Prerequisites
 
-- Node.js 18+ and npm
-- Python 3.9+
-- Solana CLI tools
-- OpenAI API key
-- Perplexity API key
+- Python 3.8 or higher
+- pip (Python package manager)
+- Solana CLI tools (for blockchain integration)
+- Node.js and npm (if using the web interface)
 
-## Installation
+## Step 1: Clone the Repository
 
-1. Clone the repository:
+```bash
+git clone https://github.com/abhii1223/Anti-misinformation_Swarm-Solana-.git
+cd Anti-misinformation_Swarm-Solana-
+```
+
+## Step 2: Set Up Python Environment
+
+It's recommended to use a virtual environment:
+
+```bash
+cd "Swarm RL/anti-misinfo-swarm"
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+- On Windows:
+  ```
+  venv\Scripts\activate
+  ```
+- On macOS/Linux:
+  ```
+  source venv/bin/activate
+  ```
+
+## Step 3: Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Step 4: Configure API Keys
+
+1. Create an API keys file:
    ```bash
-   git clone https://github.com/abhii1223/Anti-misinformation_Swarm-Solana-.git
-   cd Anti-misinformation_Swarm-Solana-
+   cp api_keys.example.json api_keys.json
    ```
 
-2. Install frontend dependencies:
+2. Edit `api_keys.json` and add your actual API keys:
+   - OpenAI API key (required)
+   - Perplexity API key (optional but recommended)
+   - Google API key and Custom Search Engine ID (optional, for web search capabilities)
+
+## Step 5: Set Up Solana (for blockchain integration)
+
+1. Install Solana CLI tools following the [official guide](https://docs.solana.com/cli/install-solana-cli-tools)
+
+2. Create a Solana keypair if you don't have one:
    ```bash
-   npm install
+   solana-keygen new --outfile ~/.config/solana/id.json
    ```
 
-3. Install backend dependencies:
+3. Configure Solana to use the devnet (for testing):
    ```bash
-   cd "Swarm RL/anti-misinfo-swarm"
-   pip install -r requirements.txt
+   solana config set --url https://api.devnet.solana.com
    ```
 
-4. Configure API keys:
+4. Request airdrop to fund your account (for devnet testing):
    ```bash
-   # Create the API keys file with your credentials
-   cp "Swarm RL/anti-misinfo-swarm/api_keys.example.json" "Swarm RL/anti-misinfo-swarm/api_keys.json"
-   # Edit the file with your own API keys
-   nano "Swarm RL/anti-misinfo-swarm/api_keys.json"
+   solana airdrop 2
    ```
 
-5. Set up Solana wallet:
-   ```bash
-   # Create a new Solana keypair or import an existing one
-   solana-keygen new -o ~/.config/solana/factcheck-wallet.json
-   ```
+## Step 6: Initialize Knowledge Base (for RAG capability)
 
-## Configuration
+If you plan to use the RAG (Retrieval-Augmented Generation) feature:
 
-1. Update the sender and receiver addresses in `factcheck_to_solana.sh`:
-   ```bash
-   SENDER_KEYPAIR="/path/to/your/wallet.json"
-   RECEIVER_ADDRESS="your-receiver-address"
-   ```
+```bash
+python init_knowledge_base.py
+```
 
-2. Update the receiver address in `src/components/solana/transactions-list.tsx`:
-   ```typescript
-   const RECEIVER_ADDRESS = 'your-receiver-address';
-   ```
+This will create a knowledge base with factual information that the system can use for enhanced fact-checking.
 
-## Running the Application
+## Step 7: Test the System
 
-1. Start the frontend development server:
-   ```bash
-   npm run dev
-   ```
+Run a basic test to ensure everything is working:
 
-2. Access the application at http://localhost:3000
+```bash
+python swarm_demo.py --claim "Earth is the third planet from the Sun"
+```
 
-## Factchecking a Claim
+## Troubleshooting
 
-You can verify claims in two ways:
+- **API Key Issues**: If you encounter errors about invalid API keys, double-check your `api_keys.json` file
+- **Solana Connection Errors**: Ensure your Solana CLI is properly configured and connected to the desired network
+- **Python Package Errors**: Make sure you're using the virtual environment and have installed all dependencies
 
-1. **Through the Web Interface**:
-   - Enter a claim in the text area on the homepage
-   - Click "Check Claim" to submit
-   - View the verification result and blockchain transaction
+## Next Steps
 
-2. **Using the Command Line**:
-   ```bash
-   cd "Swarm RL/anti-misinfo-swarm"
-   ./factcheck_to_solana.sh "The claim to verify"
-   ``` 
+Refer to the [README.md](README.md) for information on how to use the system's various features and commands. 

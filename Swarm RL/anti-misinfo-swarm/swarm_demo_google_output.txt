@@ -1,0 +1,58 @@
+2025-04-12 19:11:22,456 - swarm_demo - INFO - Loaded API keys from api_keys.json
+2025-04-12 19:11:22,685 - google_context_provider - ERROR - API test failed with status code 403. Response: {
+  "error": {
+    "code": 403,
+    "message": "Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocked.",
+    "errors": [
+      {
+        "message": "Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocked.",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ],
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "API_KEY_SERVICE_BLOCKED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "customsearch.googleapis.com",
+          "methodName": "google.customsearch.v1.CustomSearchService.List",
+          "apiName": "customsearch",
+          "consumer": "projects/626430472712"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocked."
+      }
+    ]
+  }
+}
+
+2025-04-12 19:11:22,685 - google_context_provider - WARNING - Google Search API is not working. Using fallback context.
+2025-04-12 19:11:22,685 - swarm_demo - INFO - Google Search API enabled for context retrieval
+2025-04-12 19:11:23,139 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+2025-04-12 19:11:23,140 - perplexity_model - INFO - Initialized Perplexity model: sonar
+2025-04-12 19:11:23,165 - openai_model - INFO - Initialized OpenAI model: gpt-4o
+2025-04-12 19:11:23,165 - perplexity_model - INFO - Initialized Perplexity model: sonar
+
+================================================================================
+🧠 SWARM RL ANTI-MISINFORMATION SYSTEM 🧠
+================================================================================
+
+This demo showcases a decentralized swarm of AI models that collaborate
+to detect misinformation through three-stage reinforcement learning:
+
+1. Analysis: Independent fact-checking by multiple peers
+2. Critique: Cross-evaluation of analyses for flaws and insights
+3. Consensus: Formation of a unified verdict with confidence score
+
+Each peer earns rewards based on the quality of their contributions.
+
+⚠️ Google Search API not working - using fallback context
+   Check logs for details on API issues
+
+Enter a claim to analyze (or 'exit' to quit): 
